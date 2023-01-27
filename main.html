@@ -1,0 +1,118 @@
+<!-- YourPass -->
+<!-- [P]assword [G]enerator [F]rom [P]ersonal [I]nformation -->
+<!-- Version: 1.0 -->
+<!-- All rights reserved to (secvirus) -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="main.css">
+        <!-- <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"> -->
+        <!-- <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script> -->
+        <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="screen" /> -->
+        <link rel="icon" href="recources/yourpass.png">
+        
+        <script src="main.js"></script>
+
+        <title>YourPass</title>
+    </head>
+    <body>
+        <video id="background-video" autoplay loop muted>
+            <source src="recources/hacking-background.mp4" type="video/mp4">
+        </video>
+        <div class="navbar">
+            <img id="logo" src="recources/yourpass.png" alt="YourPassLogo">
+            <h1 class="PageHeaderTitle">
+                YourPass
+            </h1>
+            <p class="PageHeaderSubtitle">
+                <strong class="FirstLetter">P</strong>assword
+                <strong class="FirstLetter">G</strong>enerator
+                <strong class="FirstLetter">F</strong>rom
+                <strong class="FirstLetter">P</strong>ersonal
+                <strong class="FirstLetter">I</strong>nformation
+            </p>
+        </div>
+
+        <hr class="Separator">
+
+        <div class="data-insertation-filed">
+            <input 
+            maxlength="35" placeholder="Add new information" title="New information filed"
+            minlength="1" class="info-input" id="info-input"
+            type="text" onkeypress="InputBoxHitEnter()" required>
+            <button id="add-button" class="add-button" type="submit" onclick="AddInfo()">Add</button>
+        </div>
+        
+        <!-- information table -->
+        <!-- <div>
+            <div id="no-spaces" title="Remove spaces from information">
+                <input id="no-spaces-checkbox" type="checkbox">
+                <label for="no-spaces-checkbox">no spaces</label>
+            </div>
+            <div id="md5" title="Add passwords as md5 hash">
+                <input id="md5-checkbox" title="Show password as md5 hash" type="checkbox">
+                <label for="md5-checkbox">md5</label>
+            </div>
+        </div> -->
+        <div class="information-table">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <td>#</td>
+                    <td>info</td>
+                    <td>action</td>
+                </thead>
+                <tbody id="info-table"></tbody>
+            </table>
+            <div class="information-table-bar">
+                <button onclick="Generate()" id="mix-button" class="mix-button" type="submit" title="Start mixing victim information">Mix</button>
+                <input list="defaultLevels" pattern="\d*" placeholder="level" title="Mixing level" step="1" value="1" min="1" max="3" type="number" class="blend-level-input" required>
+            </div>
+        </div>
+        <!-- <input id="load-button" class="load-button" accept=".csv, .txt" type="file" onchange="Load(this)">
+        <label for="load-button" title="Load victim information from a file" id="load-text">
+            <span id="file-name"></span> <i class="fa fa-file fa-sm"></i>
+        </label> -->
+
+        <!-- <datalist id="defaultLevels">
+            <option value="1">
+            <option value="2">
+            <option value="3">
+        </datalist> -->
+
+        <!-- Passwords table -->
+        <div class="passwords-table">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <td>#</td>
+                    <td>password</td>
+                    <td>Mix lvl.</td>
+                    <td>Length</td>
+                    <td>Strength</td>
+                </thead>
+                <tbody id="pass-table"></tbody>
+            </table>
+            <div class="passwords-table-bar">
+                <button onclick="Save()" id="save-button" class="save-button" type="submit" title="Copy all mixed passwords.">Copy</button>
+            </div>
+        </div>
+        <!-- <input
+        maxlength="30" placeholder="Output filename"
+        minlength="1" class="output-file-input" id="output-file-input"
+        type="text" title="Save output passwords to this filename" required> -->
+
+    </body>
+    <footer>
+        <div class="footer-container">
+            <a href="https://www.github.com/isecvirus/yourpass" target="_blank">
+                <img src="recources/github.png" alt="github::isecvirus">
+            </a>
+            <a href="https://www.instagram.com/secvirus" target="_blank">
+                <img src="recources/instagram.png" alt="instagram::secvirus">
+            </a>
+        </div>
+    </footer>
+</html>
